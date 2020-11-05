@@ -11,7 +11,7 @@ int main()
 
     //Item 5: Know what functions C++ silently writes and calls
     //copy ctor is called here
-    Product p4 = p2; 
+    Product p4(p2); 
     std::cout<<"P4: "<<p4.getName()<<std::endl;
     std::cout<<"P2: "<<p2.getName()<<std::endl;
 
