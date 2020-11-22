@@ -32,12 +32,32 @@ Product::~Product(){
 }
 
 //copy ctor, needed in HairShop ctor for member initialization list
-Product::Product(const Product& p){
-    productID = p.productID;
-    productName = p.productName;
-    productType = p.productType;
-    productStock = p.productStock;
-    productPrice = p.productPrice;
+Product::Product(const Product& p)
+:productID(p.productID),
+productName(p.productName),
+productType(p.productType),
+productStock(p.productStock),
+productPrice(p.productPrice)
+{
+    std::cout<<"Product is initialized with copy ctor!"<<std::endl;
+}
+
+Product& Product::operator = (const Product& p){
+
+    // Item 11: Handle assignment to self in operator=.
+    Product temp(p);
+    swap(temp);
+    return *this;
+    // Item 10: Have assignment operators return a reference to *this.
+}
+
+void Product::swap(Product& p){
+
+    this->productID = p.productID;
+    this->productName = p.productName;
+    this->productType = p.productType;
+    this->productStock = p.productStock;
+    this->productPrice = p.productPrice;
 }
 
 std::string Product::getName(){
@@ -49,4 +69,3 @@ int Product::getPrice(){
 
     return productPrice;
 }
-
