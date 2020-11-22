@@ -13,9 +13,9 @@ private:
     int productStock;
     int productPrice;
 
-    // Item 6: Explicitly disable the use of compiler generated functions you do not want
-    // In this case, copy assigment operator is declared private and without an implementation
-    Product& operator = (const Product&);
+protected:
+
+    void swap(Product& p);
 
 public:
     //Item 5: Know what functions C++ silently writes and calls.
@@ -27,6 +27,9 @@ public:
 
     //ctor with parameters
     Product(const int& productID, const std::string& productName, const std::string& productType, const int& productStock, const int& productPrice);
+
+    //copy assigment operator
+    Product& operator = (const Product&);
 
     //destructor
     ~Product();
