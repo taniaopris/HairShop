@@ -10,4 +10,6 @@ add_executable( HairShop_project
                 ${PROJECT_SRC_DIR}/product.cpp
                 ${PROJECT_SRC_DIR}/product.h
                 ${PROJECT_SRC_DIR}/hairShop.cpp
-                ${PROJECT_SRC_DIR}/hairShop.h)
+                ${PROJECT_SRC_DIR}/hairShop.h
+                ${PROJECT_SRC_DIR}/electricProduct.cpp
+                ${PROJECT_SRC_DIR}/electricProduct.h)
