@@ -2,6 +2,8 @@
 #define PRODUCT_H
 
 #include<iostream>
+#include <locale>
+#include <memory>
 
 class Product{
 
@@ -36,6 +38,9 @@ public:
     
     std::string getName();
     int getPrice();
+
+    //Item 13: Use objects to manage resources
+    void getCheaperPrice();
 
 };
 
