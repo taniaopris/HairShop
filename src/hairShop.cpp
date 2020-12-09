@@ -32,3 +32,23 @@ void HairShop::listProducts(void)
         std::cout<<"Name "<<p.getName()<<", price: "<<p.getPrice()<<std::endl;
     }
 }
+
+HairShop* HairShop::instance = 0;
+
+//Item 14: Prohibit copying
+HairShop* HairShop::getInstance(const std::list<Product>& pro){
+
+    if(0 == instance){
+        instance = new HairShop(pro);
+    }
+    return instance;
+}
+
+//Item 14: Prohibit copying
+HairShop* HairShop::getInstance(){
+
+    if(0 == instance){
+        instance = new HairShop();
+    }
+    return instance;
+}
