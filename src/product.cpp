@@ -69,3 +69,18 @@ int Product::getPrice(){
 
     return productPrice;
 }
+
+//Item 13: Use objects to manage resources
+void Product::getCheaperPrice(){
+
+    std::auto_ptr<Product> standardProduct (new Product(10, "Head & shoulders", "condtioner", 10, 40));
+
+    if(standardProduct->getPrice() < this->getPrice())
+        std::cout<<"This product is more expensive than a standard one!"<<std::endl;
+    else
+    {
+        std::cout<<"This product is cheaper than a standard one!"<<std::endl;
+    }
+    //standardProduct will be destroyed by auto_ptr
+    
+}
