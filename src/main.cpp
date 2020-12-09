@@ -24,9 +24,14 @@ int main()
     l.push_back(p4);
     l.push_back(p5);
 
-    HairShop h(l);
+    // HairShop* h = HairShop::getInstance();
 
-    h.listProducts();
+    HairShop* h = HairShop::getInstance(l);
+
+    h->listProducts();
+
+    p1.getCheaperPrice();
+    p2.getCheaperPrice();
 
     return 0;
 }
